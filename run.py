@@ -1,4 +1,4 @@
-import gspread 
+import gspread
 from google.oauth2.service_account import Credentials
 from pprint import pprint
 
@@ -11,7 +11,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('love_sandwiches')
+SHEET = GSPREAD_CLIENT.open('Delish_n_Wholesome')
 
 def get_sales_data():
     """
@@ -53,12 +53,21 @@ def validate_data(values):
 
 def update_sales_worksheet(data):
     """
-    update sales worksheet, add new roe with the list data provided.
+    update sales worksheet, add new row with the list data provided.
     """
     print("Updating sales worksheet...\n")
     sales_worksheet = SHEET.worksheet("sales")
     sales_worksheet.append_row(data)
     print("Sales worksheet updated successfully.\n")
+
+def update_surplus_worksheet(data):
+    """
+    update surplus worksheet, add new row with the list data provided.
+    """
+    print("Updating surplus worksheet...\n")
+    surplus_worksheet = SHEET.worksheet("surplus")
+    surplus_worksheet.append_row(data)
+    print("Surplus worksheet updated successfully.\n")
 
 def calculate_surplus_data(sales_row):
     """
@@ -87,7 +96,7 @@ def main():
     sales_data = [int(num) for num in data]
     update_sales_worksheet(sales_data)
     new_surplus_data = calculate_surplus_data(sales_data)
-    print(new_surplus_data)
+    update_surplus_worksheet(new_surplus_data)
 
 print("Welcome to Delish Wholesome Data Automation")
 main()
