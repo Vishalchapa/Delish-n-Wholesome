@@ -1,32 +1,35 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Welcome to the Delish-n-Wholesome project! I’m absolutely thrilled to show you this exciting journey where Python meets real-world data management!
 
-Welcome,
+Here’s a glimpse of what Delish-n-Wholesome can do:
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+1. Seamless Google Sheets Integration
+I’ve developed a Python application that connects seamlessly with Google Sheets through its API. This integration allows our program to effortlessly push and pull data, keeping everything synchronised and up-to-date.
 
-## Reminders
+2. Dynamic Stock Management
+Enter a 6-digit code into our sleek Python frontend, and watch as the backend springs into action, instantly updating the stock data in Google Sheets.
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+Home Page Image:
+<img src="./assets/images/Home Page.png">
+Successful Message Update:
+<img src="./assets/images/Valid Message.png">
+3. Smart Surplus Calculation
+Our program calculates the daily surplus and automatically updates the surplus page in the Google Spreadsheet. This feature helps the company better predict future stock needs, minimize waste, and make data-driven decisions.
 
-## Creating the Heroku app
+Surplus Update Image:
+<img src="./assets/images/Surplus Data.png">
+4. Real-Time Sales Data
+Here’s how the sales data is handled:
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+When a sale is entered, it’s reflected instantly in the spreadsheet, providing real-time updates on sales performance.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Sales Update Image:
+<img src="./assets/images/Sales Data.png">
+5. Stock Updates
+The stock data is automatically updated in the Google Sheet whenever new data is entered. This ensures that stock levels are always accurate and up-to-date.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Stock Update Image:
+<img src="./assets/images/Stock Data.png">
+6. Heroku Deployment
+I’ve deployed the project on Heroku, making it accessible online. You can see the project in action here: https://delish-n-wholesome-8ce733264d94.herokuapp.com/ This deployment ensures the Python app runs smoothly and updates the Google Sheet in real-time.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+Feel free to explore, experiment, and check out the source code links provided with project and experience how Python and Google Sheets can come together to streamline data management and automate processes. 
