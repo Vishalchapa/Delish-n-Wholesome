@@ -1,3 +1,5 @@
+import sys, subprocess
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'gspread'])
 import gspread
 from google.oauth2.service_account import Credentials
 from pprint import pprint
@@ -97,15 +99,30 @@ def calculate_surplus_data(sales_row):
 
     return surplus_data
 
+def get_last_5_entries_sales():
+    """
+    Collects columns of data from sales worksheet, collecting the last 5 entries for each sandwich and returns the data as a list of lists.
+    """
+    sales = SHEET.worksheet("sales")
+    #columns = sales.col_values(3)  
+    #print(column)
+
+    columns = []
+    for ind in range(1, 7):
+        column = sales.col_values(ind)
+        columns.append(column)
+    return columns
+
 def main():
     """
     Run all program functions
     """
     data = get_sales_data()
     sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data, "sales")
+    update_worksheet(sales_data, "sales")
     new_surplus_data = calculate_surplus_data(sales_data)
     update_surplus_worksheet(new_surplus_data, "surplus")
 
 print("Welcome to Delish Wholesome Data Automation")
-main()
+#main()
+sales_columns = get_last_5_entries_sales()
